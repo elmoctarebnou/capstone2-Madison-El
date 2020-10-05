@@ -1,0 +1,64 @@
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 2rem;
+ }
+ 
+main form div {
+   margin: .3rem;
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-between;
+   width: 300px;
+ }
+ h2{
+   text-align: center;
+ }
+ footer{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+ }
+.Button{
+   width: 100px;
+   border: none;
+   background-color: #023e8a;
+   color: white;
+   padding: .5rem;
+   border-radius:  5px;
+   margin-top: 2rem;
+   margin-bottom: 1rem;
+ }
+ @media screen and (max-device-width: 600px){
+   main{ 
+     font-size: 3rem;
+   }
+   main p{
+     text-align: center;
+   };
+   main form {
+     width: 100vw;
+   }
+   main form div{
+     flex-direction: column;
+     margin: 1rem auto;
+     width: 80vw;
+   }
+   main form div input{
+     height: 80px;
+     margin-top: 1rem;
+     border: 1px solid black;
+
+   }
+   .Button{
+     font-size: 4rem;
+     width: 300px;
+   }
+ }

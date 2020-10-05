@@ -1,0 +1,45 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a{
+  text-decoration: none;
+}
+.nav-links{
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+header{
+  background-color: #e29578;
+  border: 1px solid black;
+  padding: 0 1rem;
+}
+#blue{
+  color: #023e8a;
+  font-size: 1.5 rem;
+  
+}
+ 
+#white{
+  color: white;
+  font-size: 1.5 rem;
+}
+@media screen and (max-device-width: 600px){
+  header{
+    font-size: 1.8rem;
+  }
+  .nav-links{
+    font-size: 3rem;
+  }
+  #blue{
+    font-size: 4rem;
+  }
+  #white{
+    font-size: 4rem;
+  }
+}
