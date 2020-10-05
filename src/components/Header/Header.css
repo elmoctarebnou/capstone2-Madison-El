@@ -19,6 +19,15 @@ header{
   border: 1px solid black;
   padding: 0 1rem;
 }
+nav span {
+  font-size: 2rem;
+  margin:1rem;
+  color: white;
+}
+nav a {
+ font-size: 1.5rem;
+ color: red;
+}
 #blue{
   color: #023e8a;
   font-size: 1.5 rem;
@@ -35,6 +44,14 @@ header{
   }
   .nav-links{
     font-size: 3rem;
+  }
+  nav span {
+    font-size: 3rem;
+    
+  }
+  nav a {
+   font-size: 3rem;
+   
   }
   #blue{
     font-size: 4rem;
