@@ -1,8 +1,6 @@
 import React from 'react';
 import config from '../../config';
 import TokenService from '../../services/token-service'
-import QuizWindow from '../QuizWindow/QuizWindow'
-import context from '../../contexts/Context'
 import './Dashboard.css'
 
 export default class Dashboard extends React.Component {
@@ -34,31 +32,32 @@ export default class Dashboard extends React.Component {
     event.preventDefault();
     
   }
+  createList = () => {
+    const wordsList = this.state.frenchWords.map((word) => {
+      return <li key={word.id}>
+        <h4>{word.original}</h4>
+        <h5>correct answer count: {word.correct_count}</h5>
+        <h5>incorrect answer count: {word.incorrect_count}</h5>
+      </li>
+    });
+    return wordsList
+  }
   
   render(){
-    const quizData = {
-      language: this.state.language,
-      words: this.state.frenchWords,
-      handleSubmit: this.handleSubmit
-    }
     return(
-      <context.Provider value={quizData}>
+      <section>
         <div className='header'>
-          <select>
-            <option>-- Pick a language --</option>
-            <option>{this.state.language.name}</option>
-          </select>
-          <div>
-            <h3>Words Answered Correctly : {this.state.correct_count}</h3>
-            <h3>Words Answered Incorrectly : {this.state.incorrect_count}</h3>
-          </div>
+          <h2>{this.state.language.name}</h2>
+          <h2>Total correct answers: {this.state.language.total_score}</h2>
         </div>
         <div className='main'>
-          {this.state.learning 
-          ? <QuizWindow/> 
-          : <button type='submit' onClick={() => this.setState({learning: true})}>Start Learning!</button>}
+          <a href='/learn' type='submit' onClick={() => this.setState({learning: true})}>Start practicing</a>
+          <h3>Words to practice</h3>
+          <ul>
+          {this.createList()}
+          </ul>
         </div>
-      </context.Provider>
+      </section>
     )
   }
 }
