@@ -9,12 +9,7 @@ export default class Dashboard extends React.Component {
     this.state = {
       language: {},
       frenchWords: [],
-      correct_count: 0,
-      incorrect_count: 0,
-      total_score: 0,
-      wordNumber: 0,
-      answer: '',
-      learning: false
+      total_score: 0
     }
   }
   componentDidMount = () => {
