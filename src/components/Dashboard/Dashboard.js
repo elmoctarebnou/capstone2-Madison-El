@@ -9,7 +9,9 @@ export default class Dashboard extends React.Component {
     this.state = {
       language: {},
       frenchWords: [],
-      total_score: 0
+      total_score: 0,
+      fetchOK: false
+
     }
   }
   componentDidMount = () => {
@@ -20,7 +22,7 @@ export default class Dashboard extends React.Component {
       }
     })
     .then(res => res.json())
-    .then(res => this.setState({language: res.language, frenchWords: res.words}));
+    .then(res => this.setState({language: res.language, frenchWords: res.words, fetchOK: true}));
   }
 
   handleSubmit = (event) => {
@@ -39,20 +41,24 @@ export default class Dashboard extends React.Component {
   }
   
   render(){
-    return(
-      <section>
-        <div className='header'>
-          <h2>{this.state.language.name}</h2>
-          <h2>Total correct answers: {this.state.language.total_score}</h2>
-        </div>
-        <div className='main'>
-          <a href='/learn' type='submit' onClick={() => this.setState({learning: true})}>Start practicing</a>
-          <h3>Words to practice</h3>
-          <ul>
-          {this.createList()}
-          </ul>
-        </div>
-      </section>
-    )
+    let dashboardHTML;
+    if(this.state.fetchOK === false){
+        dashboardHTML = <h1>Loading...</h1>
+    }else{
+      dashboardHTML = (<section>
+          <div className='header'>
+            <h2>{this.state.language.name}</h2>
+            <h2>Total correct answers: {this.state.language.total_score}</h2>
+          </div>
+          <div className='main'>
+            <a href='/learn' type='submit'>Start practicing</a>
+            <h3>Words to practice</h3>
+            <ul>
+            {this.createList()}
+            </ul>
+          </div>
+        </section>)
+    }
+  return <>{dashboardHTML}</>
   }
 }
