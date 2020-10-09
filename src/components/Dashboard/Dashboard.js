@@ -11,7 +11,6 @@ export default class Dashboard extends React.Component {
       frenchWords: [],
       total_score: 0,
       fetchOK: false
-
     }
   }
   componentDidMount = () => {
