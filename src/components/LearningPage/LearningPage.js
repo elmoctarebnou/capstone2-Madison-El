@@ -52,8 +52,8 @@ export default class LearningPage extends React.Component{
             <h2>Translate the word:</h2>
             <span>{word}</span>
           </div>
-          <form onSubmit={this.handleSubmit}>
-            <input onChange = {(event) => this.setState({guess: event.currentTarget.value})}type='text' placeholder='Enter your answer' required/>
+          <form className='guess-form' onSubmit={this.handleSubmit}>
+            <input onChange = {(event) => this.setState({guess: event.currentTarget.value})}type='text' placeholder='Enter your guess' required/>
             <button>Submit</button>
           </form>
       </main>

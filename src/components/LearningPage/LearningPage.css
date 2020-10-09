@@ -1,0 +1,32 @@
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+main div span{
+  font-size: 2em;
+  color: #023e8a;
+}
+.guess-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.guess-form input{
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.guess-form button{
+  padding: .2em 1em;
+  font-size: 1em;
+  background-color: #e29578;
+  color: white;
+  border: none;
+}
