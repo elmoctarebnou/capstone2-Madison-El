@@ -10,24 +10,29 @@ export default class LearningPage extends React.Component{
     this.state = {
       language: {},
       frenchWords: [],
-      total_score: 0,
       fetchOK: false,
       guess: '',
+      head: null,
       next: null
     }
   }
   componentDidMount = () => {
-    this.fetch()
-  }
-  fetch = () => {
-    return fetch(`${config.API_ENDPOINT}/language`, {
-      method: "GET",
-      headers:{
-        'authorization': `Bearer ${TokenService.getAuthToken()}`,
-      }
-    })
-    .then(res => res.json())
-    .then(res => this.setState({language: res.language, frenchWords: res.words, fetchOK: true}));
+      fetch(`${config.API_ENDPOINT}/language`, {
+        method: "GET",
+        headers:{
+          'authorization': `Bearer ${TokenService.getAuthToken()}`,
+        }
+      })
+      .then(res => res.json())
+      .then(res => this.setState({language: res.language, frenchWords: res.words}));
+      fetch(`${config.API_ENDPOINT}/language/head`, {
+        method: "GET",
+        headers:{
+          'authorization': `Bearer ${TokenService.getAuthToken()}`,
+        }
+      })
+      .then(res => res.json())
+      .then(res => this.setState({head: res, fetchOK: true}));
   }
 
   handleSubmit = (event) => {
@@ -44,37 +49,57 @@ export default class LearningPage extends React.Component{
     .then(res => this.setState({next: res}))
 
   }
-  handleNextWord = async (event) => {
-    event.preventDefault()
-    await this.fetch();
-    this.setState({next: null});
+  handleNextWord = () => {
+    this.setState({head: this.state.next, next: null, fetchOK: true})
+  }
+  renderLearn= () =>{
+    return(
+      <main>
+        <div>
+          <h2>Translate the word:</h2>
+          <span>{this.state.head.nextWord}</span>
+        </div>
+        <div className='DisplayScore'>
+          <p>Your total score is: {this.state.head.totalScore}</p>
+        </div>
+        <p>You have answered this word correctly {this.state.head.wordCorrectCount} times.</p>
+        <p>You have answered this word incorrectly {this.state.head.wordIncorrectCount} times.</p>
+        <form className='guess-form' onSubmit={this.handleSubmit}>
+          <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+          <input 
+            id='learn-guess-input'
+            onChange = {(event) => this.setState({guess: event.currentTarget.value})}
+            type='text' 
+            placeholder='Enter your guess' 
+            required/>
+          <button type='submit'>Submit your answer</button>
+        </form>
+      </main>
+    )
+  }
+  renderAnswer = () => {
+    const next = this.state.next;
+    const head = this.state.head;
+    return (
+      <main>
+        <div className='DisplayScore'>
+          <p>Your total score is: {next.totalScore}</p>
+        </div>
+        <h2>{next.isCorrect === true? 'You were correct! :D' : 'Good try, but not quite right :('}</h2>
+        <div className='DisplayFeedback'>
+          <p>{`The correct translation for ${head.nextWord} was ${next.answer} and you chose ${this.state.guess}!`}</p>
+        </div>
+        <button onClick={this.handleNextWord}>Try another word!</button>
+      </main>
+    )
   }
 
-
   render = () => {
-    const word = this.state.fetchOK ? this.state.frenchWords[0].original : '';
-    let learningPageHTML;
-      learningPageHTML = <>
-      <h2>{this.state.language.name}</h2>
-      <h2>Total correct answers: {this.state.language.total_score}</h2>
-      <main>
-          <div>
-          <h2>Translate the {this.state.language.name} word to English:</h2>
-            <span>{word}</span>
-          </div>
-          {this.state.next
-          ? <>
-          <h1>{this.state.next.isCorrect ? <span className='correct'>Correct Answer</span> : <span className='incorrect'>Incorrect Answer</span>}</h1>
-          <h2>Translation: {this.state.next.answer}</h2>
-          <button onClick={this.handleNextWord} type='submit'>Try another word</button>
-          </>
-          : <form className='guess-form' onSubmit={this.handleSubmit}>
-          <input onChange = {(event) => this.setState({guess: event.currentTarget.value})}type='text' placeholder='Enter your guess' required/>
-          <button>Submit</button>
-        </form>}
-      </main>
-    </>
-    
-    return (learningPageHTML)
+    return (
+      <>
+        {this.state.fetchOK && this.state.next === null ? this.renderLearn() : null}
+        {this.state.next ? this.renderAnswer() : null}
+      </>
+    )
   }
 }
