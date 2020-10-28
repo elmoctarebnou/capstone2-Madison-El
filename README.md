@@ -3,10 +3,13 @@
 ## Team:
 
 El Moctar
+<br/>
 Madison Brown
+<br/>
 Angela Thomas
 
 ## Links:
+<br/>
 Live Application:
 Client Repo:
 API Repo:
