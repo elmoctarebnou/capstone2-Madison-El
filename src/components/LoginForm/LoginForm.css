@@ -1,67 +1,61 @@
-#registration {
+
+.LoginForm{
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid black;
   width: 90vw;
   padding: 1em;
   background-color: #023e8a;
   border-radius: 25px;
 }
-#registration div {
+.LoginForm p{
+  color: red;
+  text-align: center;
+  width: 100%;
+}
+.LoginForm div {
   flex-direction: column;
   color: white;
 }
-#registration span {
-  color: white;
-}
-#registration input{
+.LoginForm input{
   width: 40rem;
   height: 8em;
   border-radius: 10px;
   border: none;
 }
-#registration a {
-  color:#e29578;
-}
-#registration button {
+.LoginForm button {
   background-color: #e29578;
   padding: 20px;
   width: 400px;
   border-radius: 15px;
-  margin-bottom: 5rem;
-  transition: 200ms;
+  margin: 3rem 0;
 }
-#registration button:hover {
-  transform: scale(.98);
+.LoginForm button:hover {
   opacity: .9;
-  color: white;
+  cursor: pointer;
 }
 @media all and (min-device-width: 800px){
   h2{
     font-size: 2rem;
   }
-  section p {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  #registration {
+  .LoginForm{
     width: 450px;
     border-radius: 15px;
     margin-bottom: 3rem;
   }
-  #registration label{
+  .LoginForm label{
     font-size: 1.3em;
   }
-  #registration input {
+  .LoginForm input{
     font-size: 1.5rem;
     width: 300px;
     height: 40px;
-    margin-top: 10px;  
+    margin-top: 10px; 
   }
-  #registration button {
+  .LoginForm button{
     width: 250px;
     font-size: 1.5rem;
     padding: 10px;
   }
-
 }

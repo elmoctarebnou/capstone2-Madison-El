@@ -3,30 +3,116 @@ main{
   flex-direction: column;
   align-items: center;
 }
-main div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 3rem;
-}
+
 main div span{
   font-size: 2em;
   color: #023e8a;
+  text-align: center;
+  display: block;
+}
+main div h2 {
+  color: #023e8a;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  width: 90vw;
+}
+main h2 {
+  font-size: 3rem;
+}
+main p {
+  width: 90vw;
+  margin: 1rem 0;
+}
+main button {
+  background-color: #e29578;
+  color: white;
+  padding: 20px;
+  width: 500px;
+  border: none;
+  font-size: 1em;
+  border-radius: 15px;
+  margin-bottom: 5rem;
+  transition: 200ms;
+}
+main button:hover {
+  transform: scale(.98);
+  opacity: .9;
+  color: white;
+}
+.DisplayScore p{
+  margin: 2rem auto;
+  color: firebrick;
 }
 .guess-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  height: 500px;
+  width: 90vw;
 }
+
 .guess-form input{
-  font-size: 1.3em;
-  margin-bottom: 1em;
+  font-size: 3rem;
+  height: 7rem;
+  width: 100%;
+  border: 2px solid #e29578;
+  padding: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 .guess-form button{
-  padding: .2em 1em;
-  font-size: 1em;
   background-color: #e29578;
   color: white;
+  font-size: 3rem;
+  padding: 20px;
+  width: 500px;
   border: none;
+  border-radius: 15px;
+  margin-bottom: 5rem;
+  transition: 200ms;
+}
+.guess-form button:hover{
+  transform: scale(.98);
+  opacity: .9;
+  color: white;
+}
+@media all and (min-device-width: 800px){
+  
+  main p {
+    margin: 0 0 1rem;
+  }
+  .DisplayScore {
+    height: 80px;
+  }
+  main div h2{
+    font-size: 3rem;
+  }
+  main button{
+    font-size: 2rem;
+    width: 300px;
+    height: 60px;
+    padding: 5px;
+  }
+  .guess-form{
+    height: 300px;
+  }
+  .guess-form label{
+    font-size: 2rem;
+    color: #023e8a;
+    margin-bottom: 1rem;
+  }
+  .guess-form input{
+    font-size: 2rem;
+    width: 400px;
+    height: 50px;
+  }
+  .guess-form button{
+    width: 400px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 5px;
+  }
+
 }

@@ -1,9 +1,20 @@
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   width: 100vw;
+  height: 300px;
+}
+.header h2{
+  color: firebrick;
+  margin: 1rem;
+  letter-spacing: 2px;
 }
 .header select {
   height: 30px;
@@ -13,6 +24,62 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: center;
+  width: 90vw;
+}
+.main a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e29578;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  width: 600px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  transition: 200ms;
+}
+.main a:hover{
+  transform: scale(.98);
+  opacity: .9;
+  color: white;
+}
+.main h3{
+  font-size: 5rem;
+  color: #023e8a;
+}
+.main ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  
+}
+.main li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 25px;
+  list-style: none;
+  background-color: #023e8a;
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+.main li h5{
+  margin: 0;
+  font-size: 3rem;
+  color: white;
+}
+.main li h4 {
+  margin: 0 1rem 0;
+  color: #e29578;
 }
 .learning h1 {
   text-align: center;
@@ -27,4 +94,37 @@
 }
 .hide {
   display: none;
+}
+
+@media all and (min-device-width: 800px){
+  .header {
+    height: 120px;
+    margin-bottom: 5rem;
+  }
+  .main a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+    font-size: 2rem;
+  }
+  .main h3{
+    font-size: 3rem;
+  }
+  .main{
+    width: 600px;
+  }
+  .main li{
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+  }
+  .main li h4{
+    font-size: 3rem;
+  }
+  .main li h5{
+    font-size: 2rem;
+  }
+
 }

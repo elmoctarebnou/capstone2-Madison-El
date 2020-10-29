@@ -18,6 +18,7 @@ class Header extends Component {
             {this.context.user.name}
           </span>
           <Link
+            id='logout'
             onClick={this.handleLogoutClick}
             to='/login'>
             Logout
@@ -39,11 +40,11 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>
+        <>
           <Link to='/'>
           <span id="white">Speak</span><span id='blue'>EZ</span>
           </Link>
-        </h1>
+        </>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
