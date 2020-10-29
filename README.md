@@ -8,11 +8,11 @@ Madison Brown
 Angela Thomas
 
 ## Links:
-Live Application:
+Live Application: https://speak-ez.vercel.app/
 <br/>
-Client Repo:
+Client Repo: https://github.com/elmoctarebnou/capstone2-Madison-El-Angela
 <br/>
-API Repo:
+API Repo: https://github.com/elmoctarebnou/capstone2-api-Madison-El-Angela
 
 ## Demo Account:
 Username: admin
