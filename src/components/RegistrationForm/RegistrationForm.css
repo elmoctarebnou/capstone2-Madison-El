@@ -12,12 +12,15 @@
   align-items: center;
   color: white;
 }
+main h2{
+  width: 100%;
+}
 #registration span {
   color: white;
 }
 #registration input{
   width: 40rem;
-  height: 8em;
+  height: 6rem;
   border-radius: 10px;
   border: none;
 }

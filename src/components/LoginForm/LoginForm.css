@@ -17,12 +17,14 @@
 .LoginForm div {
   flex-direction: column;
   color: white;
+  align-items:center;
 }
 .LoginForm input{
   width: 40rem;
-  height: 8em;
+  height: 6rem;
   border-radius: 10px;
   border: none;
+  font-size: 3rem;
 }
 .LoginForm button {
   background-color: #e29578;
