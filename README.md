@@ -15,9 +15,9 @@ Client Repo: https://github.com/elmoctarebnou/capstone2-Madison-El-Angela
 API Repo: https://github.com/elmoctarebnou/capstone2-api-Madison-El-Angela
 
 ## Demo Account:
-Username: leo
+Username: admin
 <br/>
-Password: Leo12345@
+Password: Admin12345@
 
 ## Statement:
 
