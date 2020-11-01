@@ -15,9 +15,9 @@ Client Repo: https://github.com/elmoctarebnou/capstone2-Madison-El-Angela
 API Repo: https://github.com/elmoctarebnou/capstone2-api-Madison-El-Angela
 
 ## Demo Account:
-Username: admin
+Username: leo
 <br/>
-Password: pass
+Password: Leo12345@
 
 ## Statement:
 
@@ -30,4 +30,4 @@ In this capstone, a user learns a new language utilizing spaced repetition, a le
 ## Tech Stack:
 Front End: JavaScript, React, HTML5, CSS3
 <br/>
-Back End: Postgres, Node, REST APIs, Mocha & Chai
+Back End: PostgreSQL, Node, Express, REST APIs, Mocha & Chai
